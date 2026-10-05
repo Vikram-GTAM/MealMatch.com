@@ -42,7 +42,7 @@ const smoothiesData = [
 
 export default function SmoothiesSection() {
   return (
-    <section id="menu" className="smoothies-section" data-tsd-source="/src/components/site/Menu.tsx:47:7">
+    <section className="smoothies-section">
       <div className="smoothies-container">
         
         {/* Header Heading & Subtitle */}

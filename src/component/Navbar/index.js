@@ -77,16 +77,11 @@ const Navbar = () => {
             className="navbar-brand"
             onClick={closeMenu}
           >
-            <div className="navbar-logo-icon">
-              <img
-                src="/logo/mealmatchlogo.png"
-                alt="Meal Match Logo"
-              />
-            </div>
-
-            <span className="navbar-title">
-              MEAL MATCH
-            </span>
+            <img
+              className="navbar-brand-logo"
+              src="/logo/mealmatchlogo.png"
+              alt="Meal Match"
+            />
           </a>
 
 

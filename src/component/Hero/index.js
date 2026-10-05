@@ -23,7 +23,6 @@ const Hero = () => {
 
   return (
     <section
-      id="home"
       className="hero-section"
     >
       {/* =========================================

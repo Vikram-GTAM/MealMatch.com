@@ -17,13 +17,11 @@ export default function Footer() {
           <Link to="/" className="footer-logo">
             <div className="footer-logo-icon">
               <img
-                src="https://i.postimg.cc/FRjYWh8K/mealmatch-logo.jpg"
-                alt="Meal Match logo"
+                src="/logo/mealmatchlogo.png"
+                alt="Meal Match"
                 loading="lazy"
               />
             </div>
-
-            <span>MEAL MATCH</span>
           </Link>
 
           <p className="footer-tagline">
