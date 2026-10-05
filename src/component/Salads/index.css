@@ -1,0 +1,220 @@
+/* --- Salads Section Styling --- */
+.salads-section {
+  width: 100%;
+  background-color: #0b1a12;
+  padding: 6rem 2rem;
+  font-family: sans-serif;
+  color: #f4f1ea;
+}
+
+.salads-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.salads-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.salads-tagline {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: #c2b59b;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.salads-main-title {
+  font-family: serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #f4f1ea;
+}
+
+/* Category Tabs */
+.salads-tabs {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.salads-tab-btn {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #b8b2a7;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.6rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.salads-tab-btn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #f4f1ea;
+}
+
+.salads-tab-btn.active {
+  background-color: #dfbe87;
+  color: #111b15;
+  border-color: #dfbe87;
+  font-weight: 600;
+}
+
+/* Description */
+.salads-description {
+  font-size: 0.95rem;
+  color: #b8b2a7;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Cards Grid Layout */
+.salads-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Salad Card */
+.salad-card {
+  background-color: #0d1611;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.salad-card:hover {
+  border-color: rgba(223, 190, 135, 0.3);
+  transform: translateY(-4px);
+}
+
+.salad-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.salad-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.salad-card:hover .salad-image {
+  transform: scale(1.05);
+}
+
+.salad-card-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  color: #dfbe87;
+  background-color: rgba(8, 14, 11, 0.75);
+  border: 1px solid rgba(223, 190, 135, 0.2);
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  z-index: 2;
+  font-weight: 600;
+}
+
+/* Card Content */
+.salad-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.salad-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.salad-item-name {
+  font-family: serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #f4f1ea;
+}
+
+.salad-item-cals {
+  font-size: 0.85rem;
+  color: #c2b59b;
+  font-weight: 500;
+}
+
+/* Macros Grid boxes */
+.salad-macros-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.macro-box {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 0.6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.macro-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f4f1ea;
+}
+
+.macro-label {
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  color: #9a9488;
+}
+
+.salad-portion {
+  font-size: 0.75rem;
+  color: #9a9488;
+  margin-top: -0.25rem;
+}
+
+/* --- Responsive Media Queries --- */
+@media screen and (max-width: 1024px) {
+  .salads-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .salads-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .salads-main-title {
+    font-size: 2.4rem;
+  }
+
+  .salads-grid {
+    grid-template-columns: 1fr;
+  }
+}

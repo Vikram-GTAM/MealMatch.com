@@ -1,0 +1,207 @@
+/* --- Toast & Sandwiches Horizontal Scrolling Section --- */
+.toast-section {
+  width: 100%;
+  background-color: #0b1a12;
+  padding: 6rem 0;
+  font-family: sans-serif;
+  color: #f4f1ea;
+  overflow: hidden;
+}
+
+.toast-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.toast-header {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.toast-tagline {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: #c2b59b;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.toast-main-title {
+  font-family: serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #f4f1ea;
+  margin-bottom: 0.5rem;
+}
+
+.toast-description {
+  font-size: 0.95rem;
+  color: #b8b2a7;
+}
+
+/* Horizontal Scroll Layout */
+.toast-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(223, 190, 135, 0.3) rgba(255, 255, 255, 0.05);
+  padding-bottom: 1.5rem;
+}
+
+.toast-scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.toast-scroll-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+
+.toast-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(223, 190, 135, 0.4);
+  border-radius: 10px;
+}
+
+.toast-grid {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+}
+
+/* Card Styling */
+.toast-card {
+  background-color: #0d1611;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.toast-card:hover {
+  border-color: rgba(223, 190, 135, 0.3);
+  transform: translateY(-4px);
+}
+
+.toast-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.toast-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.toast-card:hover .toast-image {
+  transform: scale(1.05);
+}
+
+.toast-card-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  color: #dfbe87;
+  background-color: rgba(8, 14, 11, 0.75);
+  border: 1px solid rgba(223, 190, 135, 0.2);
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  z-index: 2;
+  font-weight: 600;
+}
+
+/* Card Content */
+.toast-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.toast-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.toast-item-name {
+  font-family: serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #f4f1ea;
+}
+
+.toast-item-cals {
+  font-size: 0.85rem;
+  color: #c2b59b;
+  font-weight: 500;
+}
+
+/* Macros Grid boxes */
+.toast-macros-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.toast-macro-box {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 0.6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.toast-macro-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f4f1ea;
+}
+
+.toast-macro-label {
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  color: #9a9488;
+}
+
+.toast-portion {
+  font-size: 0.75rem;
+  color: #9a9488;
+  margin-top: -0.25rem;
+}
+
+/* --- Responsive Media Queries --- */
+@media screen and (max-width: 768px) {
+  .toast-section {
+    padding: 4rem 0;
+  }
+  
+  .toast-container {
+    padding: 0 1.25rem;
+  }
+
+  .toast-main-title {
+    font-size: 2.2rem;
+  }
+
+  .toast-card {
+    width: 280px;
+  }
+}

@@ -1,0 +1,115 @@
+/* How Your Match Works Section Base Layout */
+.works-section {
+  background-color: #0b1a12;
+  padding: 6rem 2rem;
+  color: #fcfbf8;
+  font-family: sans-serif;
+  width: 100%;
+}
+/* Section 3: How Your Match Works (Back to Darkest for contrast) */
+.works-section {
+  background-color: #0b1a12;
+}
+.works-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.works-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.works-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 2.5px;
+  color: #dfbe87;
+  font-weight: 600;
+}
+
+.works-title {
+  font-family: serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #f4f1ea;
+  margin-top: 0.5rem;
+}
+
+/* Cards Grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.works-card {
+  background-color: rgba(18, 32, 24, 0.6);
+  border: 1px solid rgba(197, 193, 185, 0.15);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.works-card:hover {
+  border-color: rgba(223, 190, 135, 0.3);
+}
+
+.works-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(223, 190, 135, 0.4);
+  background-color: #111b15;
+  color: #dfbe87;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.works-card-title {
+  font-family: serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #f4f1ea;
+  margin-bottom: 0.75rem;
+}
+
+.works-card-desc {
+  font-size: 0.85rem;
+  color: #a39e93;
+  line-height: 1.5;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+@media screen and (max-width: 1200px) {
+  .works-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .works-title {
+    font-size: 2.2rem;
+  }
+
+  .works-section {
+    padding: 4rem 1.5rem;
+  }
+}

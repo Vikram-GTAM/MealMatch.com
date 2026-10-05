@@ -1,0 +1,906 @@
+/* ==========================================
+   1. GLOBAL VARIABLES & BASE STYLES
+   ================================          */
+:root {
+  --bg-color: #0b1a12;
+  --ink: #0b1a12;
+  --primary: #d4af37;
+  --primary-foreground: #0b1a12;
+  --cream: #fcfbf8;
+  --beige: #c5c1b9;
+  --muted-foreground: #c5c1b9;
+  --border: rgba(197, 193, 185, 0.15);
+  --secondary: rgba(255, 255, 255, 0.03);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--cream);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.App {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+/* ==========================================
+   2. NAVBAR STYLES
+   ================================          */
+.fixed-navbar {
+  position: fixed;
+  inset-x: 0;
+  top: 0;
+  z-index: 50;
+  transition: all 0.5s ease-in-out;
+  background: transparent;
+  padding: 1rem 0;
+}
+
+.fixed-navbar.scrolled {
+  background-color: rgba(18, 32, 24, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 0;
+}
+
+.nav-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--cream);
+}
+
+.nav-logo img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.nav-logo span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+  gap: 1.75rem;
+  justify-content: center;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.get-matched-nav-btn {
+  display: none;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.get-matched-nav-btn:hover {
+  transform: scale(1.03);
+}
+
+/* ==========================================
+   3. HERO SECTION
+   ================================          */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8rem 1.25rem 6rem;
+}
+
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1.25) saturate(1.25);
+  transform: scale(1.08);
+}
+
+.hero-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(27,27,27,0.95), rgba(27,27,27,0.6), transparent);
+}
+
+.hero-bottom-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--bg-color), transparent, rgba(27,27,27,0.5));
+}
+
+.hero-content-wrap {
+  position: relative;
+  max-width: 80rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--beige);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.hero-main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  line-height: 1.05;
+  font-weight: 700;
+  color: var(--cream);
+  margin-top: 1rem;
+}
+
+.hero-main-title em {
+  font-style: normal;
+  color: var(--primary);
+}
+
+.hero-desc {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: var(--muted-foreground);
+  max-width: 36rem;
+}
+
+.hero-pills {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pill-badge {
+  border-radius: 9999px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background-color: rgba(27, 27, 27, 0.4);
+  padding: 0.375rem 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--beige);
+  backdrop-filter: blur(8px);
+}
+
+.hero-buttons {
+  margin-top: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 1rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.primary-btn:hover {
+  transform: scale(1.03);
+}
+
+.outline-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(252, 251, 248, 0.4);
+  padding: 1rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--cream);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.outline-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.hero-checklist {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 1.75rem;
+  list-style: none;
+}
+
+.hero-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: rgba(252, 251, 248, 0.8);
+}
+
+.hero-checklist svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   4. MEAL MATCH ENGINE & CARD SECTIONS
+   ================================          */
+.engine-section, 
+.smoothies-section, 
+.salads-section, 
+.wraps-section, 
+.plans-section, 
+.trust-section, 
+.faq-section,
+.meal-match-section,
+.nutrition-section {
+  padding: 6rem 1.25rem;
+  border-top: 1px solid var(--border);
+  background-color: var(--bg-color);
+}
+
+.engine-container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.engine-header {
+  max-width: 42rem;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+.engine-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--beige);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.engine-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--cream);
+  line-height: 1.2;
+}
+
+.engine-subtitle {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--muted-foreground);
+}
+
+/* Progress Steps bar */
+.engine-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  max-width: 48rem;
+  margin: 0 auto 3rem auto;
+  align-items: center;
+}
+
+.step-item {
+  text-align: center;
+  cursor: pointer;
+}
+
+.step-circle {
+  margin: 0 auto;
+  display: flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  transition: all 0.2s ease;
+}
+
+.step-item.active .step-circle {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.step-label {
+  display: none;
+  margin-top: 0.5rem;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted-foreground);
+}
+
+/* Engine Card */
+.engine-card {
+  background-color: rgba(18, 32, 24, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.card-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card-step-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card-step-title span {
+  color: var(--primary);
+}
+
+.unit-toggle {
+  display: flex;
+  background: var(--secondary);
+  border-radius: 9999px;
+  padding: 0.25rem;
+  border: 1px solid var(--border);
+}
+
+.unit-btn {
+  background: transparent;
+  border: none;
+  padding: 0.375rem 1rem;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.unit-btn.active {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: 600;
+}
+
+.engine-inputs-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 2rem;
+}
+
+.engine-input-box {
+  background-color: rgba(27, 27, 27, 0.4);
+  border: 1px solid var(--border);
+  border-radius: 0.875rem;
+  padding: 1.25rem;
+}
+
+.input-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.box-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+}
+
+.box-value {
+  font-size: 0.875rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.custom-slider {
+  width: 100%;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.gender-options {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.gender-btn {
+  flex: 1;
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all 0.2s ease;
+}
+
+.gender-btn.active {
+  border-color: var(--primary);
+  background-color: rgba(212, 175, 55, 0.15);
+  color: var(--primary);
+}
+
+.activity-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 1fr;
+  margin-top: 0.75rem;
+}
+
+.activity-card {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 0.875rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.activity-card:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+.activity-card.active {
+  border-color: var(--primary);
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.activity-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--cream);
+}
+
+.activity-desc {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  margin-top: 0.25rem;
+}
+
+.bmi-preview-banner {
+  margin-top: 2rem;
+  background-color: rgba(27, 27, 27, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 0.875rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bmi-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bmi-icon-wrapper {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background-color: rgba(212, 175, 55, 0.15);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bmi-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+}
+
+.bmi-stat {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.bmi-status {
+  font-size: 0.875rem;
+  color: var(--primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin-left: 0.5rem;
+}
+
+.choose-goal-btn, .back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.choose-goal-btn:hover {
+  transform: scale(1.03);
+}
+
+.back-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--cream);
+}
+
+.nav-buttons-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* ==========================================
+   5. MEALS, SALADS, WRAPS & SMOOTHIES GRIDS
+   ================================          */
+.meals-grid, .salads-grid, .wraps-grid, .plans-grid, .trust-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  margin-top: 3rem;
+}
+
+.luxe-card {
+  background-color: rgba(18, 32, 24, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.luxe-card:hover {
+  border-color: rgba(197, 193, 185, 0.4);
+}
+
+.meal-img-container, .relative {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.meal-img-container img, .smoothies-card-img, .salad-card-img, .wrap-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.32, 1);
+}
+
+.luxe-card:hover img {
+  transform: scale(1.05);
+}
+
+.meal-badge, .smoothies-badge, .salad-badge, .wrap-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(27, 27, 27, 0.7);
+  color: var(--primary);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.meal-card-content, .smoothies-card-content, .salad-card-content, .wrap-card-content {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.meal-title-row, .smoothies-card-top, .salad-card-top, .wrap-card-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.meal-name, .smoothies-card-title, .salad-card-title, .wrap-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--cream);
+}
+
+.meal-cals, .smoothies-calories, .salad-calories, .wrap-calories {
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.meal-macros-grid, .smoothies-macros-grid, .salad-macros-grid, .wrap-macros-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.meal-macro-box, .macro-box {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.m-val, .macro-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--cream);
+  display: block;
+}
+
+.m-lbl, .macro-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-foreground);
+  margin-top: 0.15rem;
+  display: block;
+}
+
+.meal-footer-row, .smoothies-card-footer, .salad-card-footer, .wrap-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.meal-portion, .smoothies-portion, .salad-portion, .wrap-portion {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.add-meal-btn {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 0.375rem 0.875rem;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-meal-btn:hover, .add-meal-btn.added {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* ==========================================
+   6. FAQ ACCORDION SECTION
+   ================================          */
+.faq-container {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.faq-header {
+  max-width: 42rem;
+  margin: 0 auto 3.5rem auto;
+  text-align: center;
+}
+
+.faq-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--cream);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-question-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  padding: 1.25rem 0;
+  text-align: left;
+  cursor: pointer;
+  color: var(--cream);
+}
+
+.faq-question-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.faq-question-btn:hover .faq-question-text {
+  color: var(--primary);
+}
+
+.faq-arrow-icon {
+  color: var(--muted-foreground);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-arrow-icon {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+.faq-answer-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-in-out;
+}
+
+.faq-item.open .faq-answer-collapse {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-content {
+  overflow: hidden;
+}
+
+.faq-answer-text {
+  padding-bottom: 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+
+/* ==========================================
+   7. MEDIA QUERIES FOR RESPONSIVENESS
+   ================================          */
+@media (min-width: 640px) {
+  .nav-links {
+    display: flex;
+  }
+  .get-matched-nav-btn {
+    display: inline-flex;
+  }
+  .engine-inputs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .activity-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .meals-grid, .salads-grid, .wraps-grid, .plans-grid, .trust-grid, .smoothies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-main-title {
+    font-size: 4rem;
+  }
+  .engine-title, .plans-title, .trust-title, .faq-title, .salads-title, .wraps-title, .smoothies-title {
+    font-size: 2.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .step-label {
+    display: block;
+  }
+  .activity-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .meals-grid, .smoothies-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .salads-grid, .wraps-grid, .trust-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .plans-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .hero-main-title {
+    font-size: 5rem;
+  }
+  .engine-section, 
+  .smoothies-section, 
+  .salads-section, 
+  .wraps-section, 
+  .plans-section, 
+  .trust-section, 
+  .faq-section,
+  .meal-match-section,
+  .nutrition-section {
+    padding: 8rem 2rem;
+  }
+}

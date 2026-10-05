@@ -1,0 +1,356 @@
+/* =========================================================
+   MEAL MATCH ENGINE ROUTE PAGE
+========================================================= */
+
+.meal-engine-route-page,
+.meal-engine-route-page *,
+.meal-engine-route-page *::before,
+.meal-engine-route-page *::after {
+  box-sizing: border-box;
+}
+
+
+.meal-engine-route-page {
+  width: 100%;
+
+  min-height: 100vh;
+
+  padding-top: 82px;
+
+  background: #0b1a12;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.meal-engine-route-top {
+  width: 100%;
+
+  padding:
+    26px
+    32px
+    0;
+
+  background: #0b1a12;
+}
+
+
+.meal-engine-route-top-inner {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.meal-engine-route-back {
+  min-height: 44px;
+
+  padding:
+    0
+    19px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  color:
+    rgba(255, 255, 255, 0.75);
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  font-family:
+    "Inter",
+    Arial,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.meal-engine-route-back:hover {
+  color: #9ac66a;
+
+  border-color: #9ac66a;
+
+  background:
+    rgba(154, 198, 106, 0.06);
+
+  transform:
+    translateX(-2px);
+}
+
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.meal-engine-route-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.meal-engine-route-chip {
+  min-height: 48px;
+
+  padding:
+    8px
+    15px;
+
+  border:
+    1px solid
+    rgba(154, 198, 106, 0.16);
+
+  border-radius: 11px;
+
+  background:
+    rgba(154, 198, 106, 0.055);
+
+  color: #9ac66a;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.meal-engine-route-chip > svg {
+  flex-shrink: 0;
+
+  font-size: 13px;
+}
+
+
+.meal-engine-route-chip div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.meal-engine-route-chip span {
+  color:
+    rgba(255, 255, 255, 0.4);
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+}
+
+
+.meal-engine-route-chip strong {
+  color: #9ac66a;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ENGINE OVERRIDE
+========================================================= */
+
+.meal-engine-route-page
+.engine-section {
+  min-height: auto;
+
+  padding-top: 55px;
+}
+
+
+/* =========================================================
+   <= 1024PX
+========================================================= */
+
+@media screen and (max-width: 1024px) {
+
+  .meal-engine-route-page {
+    padding-top: 74px;
+  }
+
+
+  .meal-engine-route-top {
+    padding:
+      24px
+      24px
+      0;
+  }
+
+
+  .meal-engine-route-page
+  .engine-section {
+    padding-top: 48px;
+  }
+}
+
+
+/* =========================================================
+   <= 768PX
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .meal-engine-route-page {
+    padding-top: 68px;
+  }
+
+
+  .meal-engine-route-top {
+    padding:
+      20px
+      18px
+      0;
+  }
+
+
+  .meal-engine-route-top-inner {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 14px;
+  }
+
+
+  .meal-engine-route-back {
+    width: fit-content;
+  }
+
+
+  .meal-engine-route-info {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .meal-engine-route-chip {
+    width: 100%;
+  }
+
+
+  .meal-engine-route-page
+  .engine-section {
+    padding-top: 42px;
+  }
+}
+
+
+/* =========================================================
+   <= 600PX
+========================================================= */
+
+@media screen and (max-width: 600px) {
+
+  .meal-engine-route-info {
+    grid-template-columns: 1fr;
+  }
+
+
+  .meal-engine-route-chip {
+    min-height: 45px;
+  }
+}
+
+
+/* =========================================================
+   <= 480PX
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+  .meal-engine-route-page {
+    padding-top: 64px;
+  }
+
+
+  .meal-engine-route-top {
+    padding:
+      17px
+      13px
+      0;
+  }
+
+
+  .meal-engine-route-back {
+    min-height: 40px;
+
+    padding:
+      0
+      14px;
+
+    font-size: 11px;
+  }
+
+
+  .meal-engine-route-chip {
+    padding:
+      8px
+      12px;
+  }
+
+
+  .meal-engine-route-page
+  .engine-section {
+    padding-top: 34px;
+  }
+}
+
+
+/* =========================================================
+   <= 360PX
+========================================================= */
+
+@media screen and (max-width: 360px) {
+
+  .meal-engine-route-top {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
