@@ -27,6 +27,9 @@ unnaturally or add a `meta keywords` tag.
   are not currently published in the site.
 - Kept the canonical URL and sitemap focused on the sole public page. Add URLs
   to the sitemap when indexable pages are launched.
+- Redirected the obsolete `/2025/03/18/hello-world` WordPress URL to the
+  canonical homepage instead of serving duplicate homepage content at that
+  legacy path.
 
 ## Off-site priorities
 

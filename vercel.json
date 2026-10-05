@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/2025/03/18/hello-world",
+      "destination": "https://www.mealmatch.in/",
+      "permanent": true
+    },
+    {
+      "source": "/2025/03/18/hello-world/",
+      "destination": "https://www.mealmatch.in/",
+      "permanent": true
+    }
+  ]
+}
