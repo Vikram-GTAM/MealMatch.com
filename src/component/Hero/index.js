@@ -44,7 +44,7 @@ const Hero = () => {
 
           {/* Small Heading */}
           <p className="hero-eyebrow">
-            PERSONALISED NUTRITION, MADE SIMPLE
+            HEALTHY MEAL PLANS IN HYDERABAD
           </p>
 
           {/* Main Heading */}
@@ -56,9 +56,8 @@ const Hero = () => {
 
           {/* Description */}
           <p className="hero-description">
-            Tell us about your body, lifestyle and goals.
-            We customize what you need and match you with
-            meals customized according to your BMI.
+            Explore personalised meal plans in Hyderabad with freshly prepared,
+            protein-rich meals matched to your body, lifestyle and nutrition goals.
           </p>
 
           {/* =========================================
