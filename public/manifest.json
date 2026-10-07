@@ -3,10 +3,10 @@
   "name": "Personalised Meal Plans in Hyderabad | Meal Match",
   "icons": [
     {
-      "src": "logo/mealmatchlogo.png",
-      "sizes": "925x768",
+      "src": "logo/mealmatch-icon.png",
+      "sizes": "576x576",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ],
   "start_url": ".",
