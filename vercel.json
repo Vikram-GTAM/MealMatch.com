@@ -1,6 +1,12 @@
 {
   "redirects": [
     {
+      "source": "/:path(.*)",
+      "has": [{ "type": "host", "value": "mealmatch.in" }],
+      "destination": "https://www.mealmatch.in/:path",
+      "permanent": true
+    },
+    {
       "source": "/2025/03/18/hello-world",
       "destination": "https://www.mealmatch.in/",
       "permanent": true
@@ -9,6 +15,12 @@
       "source": "/2025/03/18/hello-world/",
       "destination": "https://www.mealmatch.in/",
       "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/favicon.ico",
+      "destination": "/logo/mealmatch-icon.png"
     }
   ]
 }
