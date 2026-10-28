@@ -30,6 +30,19 @@ unnaturally or add a `meta keywords` tag.
 - Redirected the obsolete `/2025/03/18/hello-world` WordPress URL to the
   canonical homepage instead of serving duplicate homepage content at that
   legacy path.
+- Fixed Search Console issues: apex `mealmatch.in` now 301s to
+  `https://www.mealmatch.in/`, unknown paths redirect to the homepage instead
+  of serving duplicate content, and `/favicon.ico` resolves to the logo icon.
+  The "Page with redirect" URLs are expected redirects, not errors.
+- Performance: converted the 16 menu images from ~2.5 MB PNGs to ~130 KB WebP
+  (`public/images` 43 MB -> 6.7 MB), added a WebP navbar/footer logo with
+  explicit dimensions, lazy-loaded below-the-fold images, and added long-lived
+  cache headers plus basic security headers in `vercel.json`.
+- Added `FAQPage` structured data generated from `faqData` in
+  `src/components/home/FaqSection`, so it always matches the visible FAQ. Edit the
+  FAQ there only.
+- Added robots directives (`max-image-preview:large`), `hreflang`
+  `en-IN`/`x-default`, a Twitter card image, and `<noscript>` fallback copy.
 
 ## Off-site priorities
 

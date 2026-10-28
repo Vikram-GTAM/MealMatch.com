@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import MealMatchEngine from "../../component/MealMatchEngine";
+import MealMatchEngine from "../../components/engine/MealMatchEngine";
 
 import {
   FaCheck,

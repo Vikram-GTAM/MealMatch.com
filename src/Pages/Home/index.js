@@ -1,24 +1,24 @@
 import React from "react";
 
-import Navbar from "../../component/Navbar";
-import MealMatchPopup from "../../component/MealMatchPopup";
-import Hero from "../../component/Hero";
-import HowYourMatchWorks from "../../component/HowYourMatchWorks";
-import WhyMatch from "../../component/WhyMatch";
+import Navbar from "../../components/layout/Navbar";
+import MealMatchPopup from "../../components/engine/MealMatchPopup";
+import Hero from "../../components/home/Hero";
+import HowYourMatchWorks from "../../components/home/HowYourMatchWorks";
+import WhyMatch from "../../components/home/WhyMatch";
 
-import SmoothiesSection from "../../component/SmoothiesSection";
-import Salads from "../../component/Salads";
-import ToastAndSandwiches from "../../component/ToastAndSandwiches";
-import WrapsSection from "../../component/WrapsSection";
+import SmoothiesSection from "../../components/menu/SmoothiesSection";
+import SaladsSection from "../../components/menu/SaladsSection";
+import ToastSandwichesSection from "../../components/menu/ToastSandwichesSection";
+import WrapsSection from "../../components/menu/WrapsSection";
 
-import MealMatchSection1 from "../../component/MealMatchSection1";
-import NutritionTransparency from "../../component/NutritionTransparency";
-import GoalBasedPlans from "../../component/GoalBasedPlans";
-import TrustSection from "../../component/TrustSection";
+import PersonalisationSection from "../../components/home/PersonalisationSection";
+import NutritionTransparency from "../../components/home/NutritionTransparency";
+import GoalBasedPlans from "../../components/home/GoalBasedPlans";
+import TrustSection from "../../components/home/TrustSection";
 
-import FaqSection from "../../component/FaqSection";
-import CtaBanner from "../../component/CtaBanner";
-import Footer from "../../component/Footer";
+import FaqSection from "../../components/home/FaqSection";
+import CtaBanner from "../../components/home/CtaBanner";
+import Footer from "../../components/layout/Footer";
 
 /* =========================================
    MEAL MATCH PLANS
@@ -75,9 +75,9 @@ export default function Home() {
 
           <SmoothiesSection />
 
-          <Salads />
+          <SaladsSection />
 
-          <ToastAndSandwiches />
+          <ToastSandwichesSection />
 
           <WrapsSection />
 
@@ -87,7 +87,7 @@ export default function Home() {
         {/* =========================================
             MEAL MATCH CONTENT SECTION
         ========================================= */}
-        <MealMatchSection1 />
+        <PersonalisationSection />
 
 
         {/* =========================================
